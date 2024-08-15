@@ -8,9 +8,9 @@ variable "engine" {
     type        = string
 }
 
-variable "vpc_id" {
-    description = "The id of the vpc"
-    type        = string
+variable "subnet_ids" {
+    description = "The id of the subnets"
+    type        = list(string)
 }
 
 variable "kms_key_alias" {

@@ -3,12 +3,7 @@ variable "vpc_id" {
     type        = string
 }
 
-variable "sg_name" {
-    description = "Security Group Name"
-    type        = string 
-}
-
-variable "sg_description" {
-    description = "Security Group Description"
-    type        = string 
+variable "vpc_cidr_block" {
+    description = "VPC CIDR block"
+    type        = string
 }
