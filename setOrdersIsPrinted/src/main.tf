@@ -40,6 +40,8 @@ module "lambda" {
   source = "./modules/lambdas"
 
   # Variáveis da VPC e Security Group
+  elasticache_arn = module.elastiCache.elasticache_arn
+  sqs_arn = module.sqs.sqs_arn
   subnets           = module.vpc.private_subnets_id
   security_group_id = module.security_group.sg_lambda_redis_id
 

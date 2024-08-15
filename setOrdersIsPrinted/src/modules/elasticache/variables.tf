@@ -13,11 +13,6 @@ variable "subnet_ids" {
     type        = list(string)
 }
 
-variable "kms_key_alias" {
-    description = "The alias of the kms key"
-    type        = string
-}
-
 variable "security_group_ids" {
     description = "The security group ids"
     type        = list(string)
