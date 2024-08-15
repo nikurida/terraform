@@ -32,16 +32,16 @@ module "elastiCache" {
 
   engine = "redis"
   name = "setOrderIsPrinted_redis"
-  security_group_ids = [module.security_group.sg_id]
+  security_group_ids = [module.security_group.sg_redis_id]
   subnet_ids = module.vpc.private_subnets_id
 }
 
 module "lambda" {
-  source = "./modules/lambda"
+  source = "./modules/lambdas"
 
   # Variáveis da VPC e Security Group
   subnets           = module.vpc.private_subnets_id
-  security_group_id = module.security_group.sg_id
+  security_group_id = module.security_group.sg_lambda_redis_id
 
   # Definições para a Lambda SQS
   lambda_sqs_function_name = "setIsPrintedLambda_sqs"
